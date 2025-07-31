@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-header">
+      <h2>Welcome Back</h2>
+      <p>Please sign in to your account</p>
+    </div>
+    
+    <!-- Login Form -->
+    <form id="login-form">
+      <div class="form-group">
+        <input type="email" placeholder="Email" id="email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" id="password" required />
+      </div>
+      <button type="submit" class="submit-btn">Sign In</button>
+    </form>
+
+    <!-- Register Form -->
+    <form id="register-form" style="display: none;">
+      <div class="form-group">
+        <input type="text" placeholder="Username" id="reg-username" required />
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email" id="reg-email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Password" id="reg-password" required />
+      </div>
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+
+    <!-- Forgot Password Form -->
+    <form id="forgot-form" style="display: none;">
+      <div class="form-group">
+        <input type="email" placeholder="Enter your email" id="forgot-email" required />
+      </div>
+      <button type="submit" class="submit-btn">Send Reset Link</button>
+    </form>
+
+    <!-- Reset Password Form -->
+    <form id="reset-form" style="display: none;">
+      <div class="form-group">
+        <input type="text" placeholder="Reset Token" id="reset-token" required />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="New Password" id="new-password" required />
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Confirm New Password" id="confirm-password" required />
+      </div>
+      <button type="submit" class="submit-btn">Reset Password</button>
+    </form>
+
+    <!-- Toggle buttons -->
+    <div style="text-align: center; margin: 20px 0;">
+      <button onclick="toggleForms()" class="toggle-btn" id="toggle-btn">Create Account</button>
+      <button onclick="showForgotPassword()" class="forgot-btn" id="forgot-btn">Forgot Password?</button>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p style="margin-top: 10px; color: #666;">Processing...</p>
+    </div>
+
+    <div class="result hidden" id="result"></div>
+  </div>
+<script src="auth.js"></script>
+</body>
+</html>
